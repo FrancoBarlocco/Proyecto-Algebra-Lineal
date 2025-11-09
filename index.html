@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out - Proyecto Álgebra Lineal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💡 Lights Out</h1>
+            <p class="subtitle">Proyecto de Álgebra Lineal</p>
+        </header>
+
+        <div class="game-controls">
+            <div class="control-group">
+                <label for="size">Tamaño del tablero:</label>
+                <select id="size">
+                    <option value="2">2×2</option>
+                    <option value="3">3×3</option>
+                    <option value="4">4×4</option>
+                    <option value="5" selected>5×5</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button id="newGame" class="btn btn-primary">Nuevo Juego</button>
+                <button id="solve" class="btn btn-success">Resolver</button>
+                <button id="reset" class="btn btn-secondary">Reiniciar</button>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <p id="message">Presiona "Nuevo Juego" para comenzar</p>
+            <p id="moves">Movimientos: 0</p>
+        </div>
+
+        <div id="board" class="board"></div>
+
+        <div class="solution-info" id="solutionInfo" style="display: none;">
+            <h3>Solución encontrada:</h3>
+            <p id="solutionText"></p>
+            <button id="showSolution" class="btn btn-info">Mostrar solución paso a paso</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
