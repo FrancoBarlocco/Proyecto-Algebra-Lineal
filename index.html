@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="container">
+        <button id="tutorialBtn" class="tutorial-btn" title="Tutorial">
+            <span class="info-icon">i</span>
+        </button>
         <header>
             <h1>💡 Lights Out</h1>
             <p class="subtitle">Proyecto de Álgebra Lineal</p>
@@ -17,10 +20,10 @@
             <div class="control-group">
                 <label for="size">Tamaño del tablero:</label>
                 <select id="size">
-                    <option value="2">2×2</option>
+                    <option value="2" selected>2×2</option>
                     <option value="3">3×3</option>
                     <option value="4">4×4</option>
-                    <option value="5" selected>5×5</option>
+                    <option value="5">5×5</option>
                 </select>
             </div>
             <div class="button-group">
@@ -41,6 +44,60 @@
             <h3>Solución encontrada:</h3>
             <p id="solutionText"></p>
             <button id="showSolution" class="btn btn-info">Mostrar solución paso a paso</button>
+            <button id="showNextStep" class="btn btn-info" style="display: none; margin-top: 10px;">Mostrar siguiente paso</button>
+        </div>
+    </div>
+
+    <!-- Modal del Tutorial -->
+    <div id="tutorialModal" class="tutorial-modal">
+        <div class="tutorial-content">
+            <button class="tutorial-close" id="closeTutorial">&times;</button>
+            <div class="tutorial-page-counter" id="pageIndicator">1 / 5</div>
+            <div class="tutorial-page" id="tutorialPage1">
+                <div class="tutorial-emoji">💡</div>
+                <h2>Bienvenido a Lights Out</h2>
+                <ul class="tutorial-bullets">
+                    <li>Tu objetivo es apagar todas las luces del tablero.</li>
+                    <li>El juego usa álgebra lineal para encontrar la solución automáticamente.</li>
+                </ul>
+            </div>
+            <div class="tutorial-page" id="tutorialPage2" style="display: none;">
+                <div class="tutorial-emoji">🎯</div>
+                <h2>Objetivo del Juego</h2>
+                <ul class="tutorial-bullets">
+                    <li>Debes apagar todas las luces amarillas hasta que queden todas negras.</li>
+                    <li>Ganas cuando todas las luces estén apagadas (negras).</li>
+                </ul>
+            </div>
+            <div class="tutorial-page" id="tutorialPage3" style="display: none;">
+                <div class="tutorial-emoji">🔄</div>
+                <h2>Cómo Jugar</h2>
+                <ul class="tutorial-bullets">
+                    <li>Haz clic en una luz para cambiar su estado y el de las luces adyacentes.</li>
+                    <li>Planifica tus movimientos, cada clic afecta múltiples luces a la vez.</li>
+                </ul>
+            </div>
+            <div class="tutorial-page" id="tutorialPage4" style="display: none;">
+                <div class="tutorial-emoji">🎮</div>
+                <h2>Controles del Juego</h2>
+                <ul class="tutorial-bullets">
+                    <li>Usa "Nuevo Juego" para empezar y "Resolver" para ver la solución automática.</li>
+                    <li>Cambia el tamaño del tablero según tu nivel de dificultad preferido.</li>
+                </ul>
+            </div>
+            <div class="tutorial-page" id="tutorialPage5" style="display: none;">
+                <div class="tutorial-emoji">🧮</div>
+                <h2>Matemáticas del Juego</h2>
+                <ul class="tutorial-bullets">
+                    <li>El juego se resuelve con sistemas de ecuaciones lineales sobre Z₂.</li>
+                    <li>El botón "Resolver" usa eliminación gaussiana para encontrar la solución óptima.</li>
+                </ul>
+            </div>
+            <div class="tutorial-navigation">
+                <button id="prevPage" class="btn btn-secondary" style="display: none;">Anterior</button>
+                <button id="skipTutorial" class="btn btn-secondary">Saltar</button>
+                <button id="nextPage" class="btn btn-primary">Siguiente</button>
+            </div>
         </div>
     </div>
 
